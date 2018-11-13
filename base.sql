@@ -4,8 +4,6 @@
 --   Date de creation :  13/11/18  16:35                       
 -- ============================================================
 
-drop table ROLE cascade constraints;
-
 drop table ASSOCIATION cascade constraints;
 
 drop table PERSONNES cascade constraints;
@@ -39,7 +37,7 @@ create table ASSOCIATIONS
 (
     NUMERO_ASSOCIATION		NUMBER(3)              not null,
     NOM_ASSOCIATION		CHAR(20)               not null,
-    DATE_DE_CREATION		DATE                   not null,
+    DATE_DE_CREATION		DATE			       ,
     constraint pk_association primary key (NUMERO_ASSOCIATION)
 );
 
@@ -50,15 +48,15 @@ create table ASSOCIATIONS
 
 create table PERSONNES
 (
-    NUMERO_ETUDIANT		NUMBER(3)		not null,
+    NUMERO_PERSONNE		NUMBER(3)		not null,
     NOM_PERSONNE		CHAR(20)		not null,
     PRENOM_PERSONNE		CHAR(20)			,
     MAIL_PERSONNE		CHAR(30)			,
-    FILIERE_PERSONNE		CHAR(20)		not null,
+    FILIERE_PERSONNE		CHAR(20)			,
     PROMO_PERSONNE		NUMBER(4)			,
     LOGIN_PERSONNE		CHAR(20)		not null,
     MOT_DE_PASSE		CHAR(20)			,
-    constraint pk_personne primary key (NUMERO_ETUDIANT)
+    constraint pk_personne primary key (NUMERO_PERSONNE)
 );
 
 -- ============================================================
@@ -68,8 +66,8 @@ create table PERSONNES
 create table ADHERENTS
 (
     NUMERO_ADHERENT		NUMBER(3)		not null,
-    COTISATION_ADHERENT		NUMBER(3)		not null,
-    NUMERO_ETUDIANT		CHAR(20)			,
+    COTISATION_ADHERENT		CHAR(20)			,
+    NUMERO_PERSONNE		CHAR(20)			,
     constraint pk_adherent primary key (NUMERO_ADHERENT)
 );
 
@@ -81,9 +79,9 @@ create table NEWS
 (
     NUMERO_NEWS			NUMBER(3)		not null,
     TITRE_NEWS			CHAR(20)		not null,
-    TEXTE_NEWS			CHAR(20)			,
+    TEXTE_NEWS			CHAR(100)		not null,
     DATE_DE_CREATION_NEWS	DATE				,
-    NUMERO_ADHERENT		CHAR(20)			,
+    NUMERO_ADHERENT		NUMBER(20)			,
     constraint pk_news primary key (NUMERO_NEWS)
 );
 
@@ -95,7 +93,7 @@ create table EVENEMENTS
 (
     NUMERO_EVENEMENT		NUMBER(3)		not null,
     TITRE			char(20)		not null,
-    DESCRIPTION			char(20)			,
+    DESCRIPTION			char(100)		not null,
     COUT			NUMBER(3)			,
     LIEU			char(20)			,
     NOMBRE_DE_PLACES		NUMBER(3)			,
@@ -119,10 +117,10 @@ create table FINANCEMENTS
 
 create table PARTICIPATIONS
 (
-    NUMERO_ETUDIANT		NUMBER(3)		not null,
+    NUMERO_PERSONNE		NUMBER(3)		not null,
     NUMERO_EVENEMENT		NUMBER(3)		not null,
     TARIF			char(20)			,
-    constraint pk_ETUDIANT primary key (NUMERO_ETUDIANT)
+    constraint pk_PERSONNE primary key (NUMERO_PERSONNE)
     constraint pk_EVENEMENT primary key (NUMERO_EVENEMENT)
 );
 
@@ -191,8 +189,8 @@ create table ORGANISATIONS
 
 
 alter table PARTICIPATIONS
-    add constraint fk1_participations foreign key (NUMERO_ETUDIANT)
-       references PERSONNES (NUMERO_ETUDIANT);
+    add constraint fk1_participations foreign key (NUMERO_PERSONNE)
+       references PERSONNES (NUMERO_PERSONNE);
 
 alter table PARTICIPATIONS
     add constraint fk2_participations foreign key (NUMERO_EVENEMENT)
