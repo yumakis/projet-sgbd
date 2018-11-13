@@ -1,0 +1,5 @@
+http://slombardy.vvv.enseirb-matmeca.fr/ens/sgbd/tdsql.php?corr=yes
+
+http://slombardy.vvv.enseirb-matmeca.fr/ens/sgbd/jdbc.php?corr=jdbc
+
+http://slombardy.vvv.enseirb-matmeca.fr/ens/sgbd/tdsqlav.php?corrav=yes
