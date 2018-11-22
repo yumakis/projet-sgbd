@@ -167,6 +167,46 @@ insert into ORGANISATIONS values (  10 , 8  , '19-MAI-2016', '20-MAI-2016');
 
 commit ;
 
+-- ADHERENTS 
+
+insert into ADHERENTS values (  1  , 5  , 4);
+insert into ADHERENTS values (  2  , 5  , 3);
+insert into ADHERENTS values (  3  , 0  , 2);
+insert into ADHERENTS values (  4  , 5  , 1);
+insert into ADHERENTS values (  5  , 15 , 9);
+insert into ADHERENTS values (  6  , 15 , 8);
+insert into ADHERENTS values (  7  , 7  , 6);
+insert into ADHERENTS values (  8  , 7  , 7);
+insert into ADHERENTS values (  9  , 20 , 10);
+insert into ADHERENTS values (  10 , 25 , 5);
+
+commit ;
+
+-- FINANCEURS 
+
+insert into FINANCEURS values (  1  , 'SOCIETE GENERALE' );
+insert into FINANCEURS values (  2  , 'CAISSE DEPARGNE'  );
+insert into FINANCEURS values (  3  , 'PIZZAHUT'         );
+insert into FINANCEURS values (  4  , 'BURGER KING'      );
+insert into FINANCEURS values (  5  , 'MCDONALDS'        );
+
+commit ;
+
+-- EVENEMENTS 
+
+insert into EVENEMENTS values ( 'CONCERT DE NOEL'  , 'CONCERT'           , 4 , 'ENSEIRB', 100);
+insert into EVENEMENTS values ( 'OLINP'            , 'SPORT'             , 3 , 'ENSEIRB', 300);
+insert into EVENEMENTS values ( 'GALA'             , 'REMISE DE DIPLOMES', 2 , 'CHATEAU', 200);
+insert into EVENEMENTS values ( 'KRACH BOURSIER'   , 'SOIREE'            , 1 , 'BAR'    , 150);
+insert into EVENEMENTS values ( 'WEI'              , 'INTEGRATION'       , 9 , 'CAMPING', 500);
+insert into EVENEMENTS values ( 'WEN'              , 'NATURE'            , 8 , 'CAMPAGNE', 50);
+insert into EVENEMENTS values ( 'WIS'              , 'SPORT INTEGRATION' , 6 , 'IBIZA'  , 100);
+insert into EVENEMENTS values ( 'WES'              , 'SKI'               , 7 , 'SERRE CHEVALIER', 100);
+insert into EVENEMENTS values ( 'SOIREE BARBAPAPA' , 'BARBAPAPA'         , 10, 'BAR'    , 150);
+insert into EVENEMENTS values ( 'DEPART 3A'        , 'ADIEU'             , 5, 'ENSEIRB' , 200);
+
+commit ;
+
 -- ============================================================
 --    verification des donnees
 -- ============================================================
